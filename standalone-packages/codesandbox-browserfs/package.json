@@ -115,7 +115,7 @@
   },
   "dependencies": {
     "async": "~2.6.1",
-    "events": "^3.0.0",
+    "events": "^3.1.0",
     "gitignore-parser": "^0.0.2",
     "pako": "~1.0.6"
   }
