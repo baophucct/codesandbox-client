@@ -27,7 +27,7 @@
     "deploy-docs": "ts-node tools/gh-pages-publish",
     "docs": "typedoc --out docs --target es6 --theme minimal --mode file src",
     "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "prepublish": "yarn build",
+    "prepublish": "yarn run snyk-protect && yarn build",
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
@@ -36,7 +36,8 @@
     "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
     "watch:gulp": "gulp sass:watch",
     "watch:rollup": "rollup -c rollup.config.ts -w",
-    "install-dependencies": "yarn"
+    "install-dependencies": "yarn",
+    "snyk-protect": "snyk protect"
   },
   "config": {
     "commitizen": {
@@ -81,7 +82,8 @@
     "react-broadcast": "^0.6.2",
     "react-codemirror2": "^4.0.1",
     "rollup-plugin-scss": "^0.4.0",
-    "smooshpack": "^0.0.62"
+    "smooshpack": "^0.0.62",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@storybook/addon-knobs": "^3.3.14",
@@ -135,5 +137,6 @@
   },
   "engines": {
     "node": ">=6.0.0"
-  }
+  },
+  "snyk": true
 }
