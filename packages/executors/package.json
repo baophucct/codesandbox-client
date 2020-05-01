@@ -16,13 +16,16 @@
   "scripts": {
     "build": "tsdx build",
     "build:dev": "yarn build",
-    "start": "tsdx watch"
+    "start": "tsdx watch",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@codesandbox/common": "^1.0.8",
     "codesandbox-api": "0.0.24",
     "debug": "^4.1.1",
-    "socket.io-client": "^2.2.0"
+    "socket.io-client": "^2.2.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/jest": "24.0.13",
@@ -30,5 +33,6 @@
     "tsdx": "^0.6.1",
     "tslib": "^1.9.3",
     "typescript": "3.7.4"
-  }
+  },
+  "snyk": true
 }
